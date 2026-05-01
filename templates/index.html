@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Каталог документов</title>
+
+    <!-- ВОТ ЭТО НОВОЕ (manifest) -->
+    <link rel="manifest" href="/static/manifest.json">
+
+</head>
+<body style="font-family: Arial; max-width: 900px; margin: 40px auto;">
+
+<h1>Каталог шаблонов документов</h1>
+
+{% for doc in documents %}
+    <div style="border:1px solid #ccc; padding:15px; margin-bottom:15px;">
+        <p><b>{{ doc.category }}</b></p>
+        <h3>{{ doc.title }}</h3>
+        <p>Цена: {{ doc.price }}</p>
+        <a href="{{ payment_link }}" target="_blank">Купить</a>
+    </div>
+{% endfor %}
+
+</body>
+</html>
